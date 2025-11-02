@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D NPC 互動 - 智能 NPC 互動系統</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #canvas-container {
+            width: 100%;
+            height: 70vh;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            position: relative;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        #npc-canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        
+        .npc-controls {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .control-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .control-btn {
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .control-btn:hover {
+            background: #5568d3;
+        }
+        
+        .npc-info {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title"><em><strong>小夥伴</strong></em></h1>
+        <div class="content">
+            <h2>3D NPC 互動體驗</h2>
+            
+            <div id="canvas-container">
+                <div class="loading" id="loading">載入 3D 模型中...</div>
+                <canvas id="npc-canvas"></canvas>
+            </div>
+            
+            <div class="npc-controls">
+                <h3>控制面板</h3>
+                <div class="control-buttons">
+                    <button class="control-btn" onclick="rotateNPC()">旋轉 NPC</button>
+                    <button class="control-btn" onclick="resetView()">重置視角</button>
+                    <button class="control-btn" onclick="toggleAnimation()">播放/暫停動畫</button>
+                    <button class="control-btn" onclick="changeEmotion('happy')">開心</button>
+                    <button class="control-btn" onclick="changeEmotion('sad')">難過</button>
+                    <button class="control-btn" onclick="changeEmotion('neutral')">中性</button>
+                </div>
+                
+                <div class="npc-info">
+                    <h4>NPC 資訊</h4>
+                    <p>狀態: <span id="npc-status">載入中...</span></p>
+                    <p>情緒: <span id="npc-emotion">中性</span></p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <a href="index.html" class="btn">返回主頁</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Three.js 庫 -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
+        }
+    }
+    </script>
+    <script type="module" src="npc-3d.js"></script>
+</body>
+</html>
+

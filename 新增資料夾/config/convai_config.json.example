@@ -1,0 +1,7 @@
+{
+  "api_key": "YOUR_CONVAI_API_KEY_HERE",
+  "character_id": "YOUR_CHARACTER_ID_HERE",
+  "base_url": "https://api.convai.com",
+  "timeout": 30,
+  "retry_attempts": 3
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登錄 - 智能 NPC 互動系統</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>登錄系統</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">帳號</label>
+                    <input type="text" id="username" name="username" required placeholder="請輸入帳號">
+                </div>
+                <div class="form-group">
+                    <label for="password">密碼</label>
+                    <input type="password" id="password" name="password" required placeholder="請輸入密碼">
+                </div>
+                <div class="form-group" style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <input type="checkbox" id="remember-me" name="remember_me" style="width: auto; margin-right: 8px;">
+                    <label for="remember-me" style="margin: 0; font-weight: normal;">記住我（30天）</label>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">登入</button>
+                    <button type="button" class="btn btn-secondary" onclick="loginAsGuest()" style="background: #6c757d; margin-top: 10px;">訪客登入</button>
+                </div>
+                
+                <!-- OAuth 登入分隔線 -->
+                <div style="margin: 20px 0; text-align: center; position: relative;">
+                    <div style="border-top: 1px solid #e0e0e0; position: relative;">
+                        <span style="background: white; padding: 0 15px; position: absolute; top: -10px; left: 50%; transform: translateX(-50%); color: #666; font-size: 14px;">或使用第三方登入</span>
+                    </div>
+                </div>
+                
+                <!-- OAuth 登入按鈕 -->
+                <div class="oauth-buttons">
+                    <button type="button" id="google-signin-btn" class="oauth-btn google-btn">
+                        <svg width="18" height="18" viewBox="0 0 18 18" style="margin-right: 8px;">
+                            <path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z"/>
+                            <path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z"/>
+                            <path fill="#FBBC05" d="M3.964 10.707c-.18-.54-.282-1.117-.282-1.707s.102-1.167.282-1.707V4.961H.957C.348 6.175 0 7.55 0 9s.348 2.825.957 4.039l3.007-2.332z"/>
+                            <path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.961L3.964 7.293C4.672 5.163 6.656 3.58 9 3.58z"/>
+                        </svg>
+                        使用 Google 登入
+                    </button>
+                    <button type="button" id="apple-signin-btn" class="oauth-btn apple-btn">
+                        <svg width="18" height="18" viewBox="0 0 18 18" style="margin-right: 8px;" fill="currentColor">
+                            <path d="M13.562 1.58c-.8 1.038-2.04 1.754-3.34 1.65-.15-1.39.425-2.84 1.225-3.805 1.038-1.287 2.798-2.195 3.298-2.025.52.18 1.73 1.034 1.53 2.254-.2 1.17-1.08 2.625-2.716 2.926zm.87 2.825c-2.246-.135-4.156-1.32-5.49-1.32-2.32 0-3.73 1.32-5.58 1.32-2.79 0-5.85-2.25-7.65 2.925-1.34 4.385 1.13 8.52 2.32 11.335 1.13 2.595 2.52 5.49 4.33 5.385 1.67-.12 2.32-1.08 4.28-1.08 1.95 0 2.52 1.08 4.28 1.05 1.83-.02 3.06-2.595 4.15-5.19 1.35-3.15 1.9-6.225 1.93-6.375-.14-.135-3.72-1.56-3.92-6.235z"/>
+                        </svg>
+                        使用 Apple 登入
+                    </button>
+                </div>
+                
+                <div style="text-align: center; margin-top: 15px;">
+                    <a href="register.html" class="btn btn-link">還沒有帳號？立即註冊</a>
+                </div>
+            </form>
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+    <style>
+        body {
+            opacity: 1;
+            transition: opacity 0.3s ease-in;
+        }
+        
+        .oauth-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .oauth-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            width: 100%;
+            background: white;
+        }
+        
+        .google-btn {
+            color: #4285F4;
+        }
+        
+        .apple-btn {
+            color: #000;
+            background: #000;
+            color: white;
+        }
+    </style>
+    
+    <!-- Google Sign-In SDK -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
+    <!-- Apple Sign In SDK -->
+    <script src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
+    
+    <script src="auth.js"></script>
+    <script src="oauth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

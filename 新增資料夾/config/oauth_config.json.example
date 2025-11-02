@@ -1,0 +1,15 @@
+{
+  "google": {
+    "client_id": "YOUR_GOOGLE_CLIENT_ID_HERE",
+    "client_secret": "YOUR_GOOGLE_CLIENT_SECRET_HERE",
+    "redirect_uri": "http://localhost:5000/oauth/google/callback"
+  },
+  "apple": {
+    "client_id": "YOUR_APPLE_CLIENT_ID_HERE",
+    "team_id": "YOUR_APPLE_TEAM_ID_HERE",
+    "key_id": "YOUR_APPLE_KEY_ID_HERE",
+    "private_key": "YOUR_APPLE_PRIVATE_KEY_HERE",
+    "redirect_uri": "http://localhost:5000/oauth/apple/callback"
+  }
+}
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊 - 智能 NPC 互動系統</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>註冊帳號</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="username">帳號</label>
+                    <input type="text" id="username" name="username" required placeholder="請輸入帳號（3-20字元）" minlength="3" maxlength="20">
+                </div>
+                <div class="form-group">
+                    <label for="email">電子郵件（選填）</label>
+                    <input type="email" id="email" name="email" placeholder="請輸入電子郵件">
+                </div>
+                <div class="form-group">
+                    <label for="password">密碼</label>
+                    <input type="password" id="password" name="password" required placeholder="請輸入密碼（至少6字元）" minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">確認密碼</label>
+                    <input type="password" id="confirm-password" name="confirm_password" required placeholder="請再次輸入密碼" minlength="6">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">註冊</button>
+                    <a href="login.html" class="btn btn-link">已有帳號？前往登錄</a>
+                </div>
+            </form>
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+    <style>
+        body {
+            opacity: 1;
+            transition: opacity 0.3s ease-in;
+        }
+    </style>
+    <script src="auth.js"></script>
+    <script src="register.js"></script>
+</body>
+</html>
+

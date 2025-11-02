@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用戶控制台 - 智能 NPC 互動系統</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .dashboard-header {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .dashboard-card h3 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .action-btn {
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            transition: transform 0.2s;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">U</div>
+                <div>
+                    <h2 style="margin: 0;">歡迎，<span id="userName">載入中...</span></h2>
+                    <p style="margin: 5px 0 0 0; color: #666; font-size: 14px;" id="userEmail"></p>
+                </div>
+            </div>
+            <button class="btn" onclick="authManager.logout()" style="background: #dc3545;">登出</button>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h3>帳戶資訊</h3>
+                <div class="stat-item">
+                    <span>用戶名：</span>
+                    <strong id="info-username">-</strong>
+                </div>
+                <div class="stat-item">
+                    <span>電子郵件：</span>
+                    <span id="info-email">-</span>
+                </div>
+                <div class="stat-item">
+                    <span>最後登錄：</span>
+                    <span id="info-lastlogin">-</span>
+                </div>
+                <div class="stat-item">
+                    <span>註冊時間：</span>
+                    <span id="info-created">-</span>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>快速操作</h3>
+                <div class="quick-actions">
+                    <a href="npc.html" class="action-btn">體驗 3D NPC</a>
+                    <a href="index.html" class="action-btn" style="background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);">返回首頁</a>
+                    <button class="action-btn" onclick="authManager.logout()" style="background: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);">登出系統</button>
+                </div>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>系統狀態</h3>
+                <div class="stat-item">
+                    <span>認證狀態：</span>
+                    <span style="color: #28a745;">✓ 已登錄</span>
+                </div>
+                <div class="stat-item">
+                    <span>Token 狀態：</span>
+                    <span style="color: #28a745;">✓ 有效</span>
+                </div>
+                <div class="stat-item">
+                    <span>連接狀態：</span>
+                    <span style="color: #28a745;" id="connection-status">✓ 正常</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        // 防止頁面閃動：先隱藏內容
+        document.body.style.opacity = '0';
+        
+        // 載入用戶資料
+        async function loadUserData() {
+            const user = authManager.getUser();
+            if (user) {
+                const displayName = user.isGuest ? '訪客用戶' : (user.username || '用戶');
+                document.getElementById('userName').textContent = displayName;
+                document.getElementById('userEmail').textContent = user.email || (user.isGuest ? '訪客模式' : '未設置');
+                document.getElementById('userAvatar').textContent = user.isGuest ? 'G' : ((user.username || 'U').charAt(0).toUpperCase());
+                
+                document.getElementById('info-username').textContent = user.username || '-';
+                document.getElementById('info-email').textContent = user.email || (user.isGuest ? '訪客模式' : '未設置');
+                document.getElementById('info-lastlogin').textContent = user.last_login ? 
+                    new Date(user.last_login).toLocaleString('zh-TW') : '首次登錄';
+                document.getElementById('info-created').textContent = user.created_at ? 
+                    new Date(user.created_at).toLocaleString('zh-TW') : '-';
+            }
+
+            // 驗證認證狀態
+            const isValid = await authManager.verifyAuth();
+            if (!isValid && !user?.isGuest) {
+                return;
+            }
+
+            // 如果不是訪客，獲取完整資料
+            if (!user?.isGuest) {
+                const result = await authManager.getUserProfile();
+                if (result.success) {
+                    const updatedUser = result.data;
+                    document.getElementById('userName').textContent = updatedUser.username || '用戶';
+                    document.getElementById('userEmail').textContent = updatedUser.email || '未設置';
+                    document.getElementById('info-username').textContent = updatedUser.username || '-';
+                    document.getElementById('info-email').textContent = updatedUser.email || '未設置';
+                    document.getElementById('info-lastlogin').textContent = updatedUser.last_login ? 
+                        new Date(updatedUser.last_login).toLocaleString('zh-TW') : '首次登錄';
+                    document.getElementById('info-created').textContent = updatedUser.created_at ? 
+                        new Date(updatedUser.created_at).toLocaleString('zh-TW') : '-';
+                }
+            }
+        }
+
+        // 頁面載入時檢查認證
+        window.addEventListener('DOMContentLoaded', async () => {
+            const user = authManager.getUser();
+            const token = authManager.getToken();
+            
+            // 如果有 token 或用戶數據，先顯示內容
+            if (token || user) {
+                document.body.style.opacity = '1';
+                const isAuth = await authManager.protectRoute();
+                if (isAuth || user?.isGuest) {
+                    await loadUserData();
+                }
+            } else {
+                // 沒有認證，直接跳轉
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
+</body>
+</html>
+
