@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>組員資料 - 具備情緒回饋與記憶紀錄的文字型 NPC 對話模擬系統</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">NPC 對話系統</h1>
+            <ul class="nav-links">
+                <li><a href="index.htm">專題簡介</a></li>
+                <li><a href="team.htm">組員資料</a></li>
+                <li><a href="system01.htm">系統展示</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主標題區 -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">組員資料</h1>
+            <p class="hero-subtitle">專題團隊成員介紹</p>
+        </div>
+    </section>
+
+    <!-- 組員列表 -->
+    <section class="section">
+        <div class="container">
+            <div class="team-grid">
+                <!-- 組員 1 - 組長 -->
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="member01.jpg" alt="組長照片" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23e5e7eb%22 width=%22200%22 height=%22200%22/%3E%3Ctext fill=%22%239ca3af%22 font-family=%22sans-serif%22 font-size=%2218%22 dy=%2210.5%22 font-weight=%22bold%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22%3E組長照片%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">林優子 <span style="font-size: 0.8em; color: #8b5cf6;">（組長）</span></h3>
+                        <p class="team-id"><strong>系級：</strong>資訊管理學系</p>
+                        <p class="team-id"><strong>學號：</strong>10944203</p>
+                        <div class="team-intro">
+                            <h4>自我介紹</h4>
+                            <p>
+                                我是資訊管理學系的學生，在本次專題中主要擔任撰寫程式的工作。
+                                負責系統的後端開發、API 整合與核心功能實作，包括記憶管理機制、
+                                Prompt 動態組裝器與對話系統的邏輯設計。我對程式開發與系統架構設計
+                                有濃厚的興趣，希望透過本次專題將理論知識應用於實際專案中。
+                            </p>
+                        </div>
+                        <div class="team-reflection">
+                            <h4>專題參與心得</h4>
+                            <p>
+                                擔任組長並負責程式開發的過程中，我深刻體會到專案管理與技術實作的重要性。
+                                在開發階層式記憶轉化機制時，如何判斷資訊的重要性並自動轉化為長期記憶，
+                                是一個充滿挑戰的課題。透過不斷的測試與優化，我們最終設計出「重複提及三次以上」
+                                的轉化規則，這個過程讓我學習到如何將複雜的概念轉化為可實作的演算法。
+                                <br><br>
+                                整合 LLM API 與設計 Prompt 動態組裝器也是本次專題的重要收穫。
+                                我學會了如何根據不同人格、歷史對話與記憶內容，動態組裝出有效的 Prompt，
+                                這不僅提升了系統的回應品質，也讓我對 Prompt 工程有了更深入的理解。
+                                雖然過程中遇到許多技術難題，但透過團隊合作與持續學習，我們成功完成了系統開發，
+                                這份成就感是無可取代的。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 組員 2 -->
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="member02.jpg" alt="方浩瑋照片" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23e5e7eb%22 width=%22200%22 height=%22200%22/%3E%3Ctext fill=%22%239ca3af%22 font-family=%22sans-serif%22 font-size=%2218%22 dy=%2210.5%22 font-weight=%22bold%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22%3E方浩瑋照片%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">方浩瑋</h3>
+                        <p class="team-id"><strong>系級：</strong>資訊管理學系</p>
+                        <p class="team-id"><strong>學號：</strong>11144151</p>
+                        <div class="team-intro">
+                            <h4>自我介紹</h4>
+                            <p>
+                                我是資訊管理學系的方浩瑋，在本次專題中主要負責開會的時間整合以及文書內容處理。
+                                我與組長密切合作，討論程式內容與專題進度，確保團隊成員之間的溝通順暢。
+                                同時我也協助整理專題文件、記錄會議內容，並負責部分文書作業，
+                                讓團隊能夠更有效率地進行專題開發工作。
+                            </p>
+                        </div>
+                        <div class="team-reflection">
+                            <h4>專題參與心得</h4>
+                            <p>
+                                參與本次專題讓我深刻體會到團隊合作與專案管理的重要性。
+                                在負責開會時間整合的過程中，我學習到如何協調不同成員的時間，
+                                並確保每次會議都能達到預期的目標。文書處理的工作雖然看似簡單，
+                                但實際上需要仔細與耐心，這讓我培養了更好的組織能力與細節處理技巧。
+                                <br><br>
+                                與組長討論程式內容的過程中，我雖然不是主要的程式開發者，
+                                但透過參與討論，我對系統架構、記憶機制與人格設計有了更深入的理解。
+                                特別是在討論階層式記憶轉化機制時，我了解到如何將理論概念轉化為實際可運作的系統，
+                                這對我來說是非常寶貴的經驗。
+                                <br><br>
+                                在文書處理方面，我負責整理專題報告、記錄會議內容、撰寫系統文件等工作。
+                                這些工作讓我認識到文件管理的重要性，一個好的專題不僅要有優秀的技術實作，
+                                更需要完整的文件記錄。透過整理文件，我也對整個專題的架構與流程有了更全面的認識。
+                                <br><br>
+                                這次專題讓我成長許多，不僅提升了我的組織管理能力，
+                                也讓我對資訊管理領域的實務應用有了更實際的認識。
+                                我深刻體會到，在資訊系統開發中，技術實作與專案管理同樣重要，
+                                兩者相輔相成才能創造出成功的專題成果。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 組員 3 -->
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="member03.jpg" alt="郭翊銘照片" class="photo-center-head" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23e5e7eb%22 width=%22200%22 height=%22200%22/%3E%3Ctext fill=%22%239ca3af%22 font-family=%22sans-serif%22 font-size=%2218%22 dy=%2210.5%22 font-weight=%22bold%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22%3E郭翊銘照片%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">郭翊銘</h3>
+                        <p class="team-id"><strong>系級：</strong>資訊管理學系</p>
+                        <p class="team-id"><strong>學號：</strong>11144152</p>
+                        <div class="team-intro">
+                            <h4>自我介紹</h4>
+                            <p>
+                                我是資訊管理學系的郭翊銘，在本次專題中參與系統開發與測試工作。
+                                我協助組長進行程式開發，並負責系統測試、除錯與功能驗證。
+                                同時我也參與系統介面的設計討論，協助優化使用者體驗。
+                                我對資訊系統開發與測試有濃厚的興趣，希望透過本次專題累積實務經驗，
+                                並將所學知識應用到實際專案中。
+                            </p>
+                        </div>
+                        <div class="team-reflection">
+                            <h4>專題參與心得</h4>
+                            <p>
+                                參與本次專題讓我對資訊系統開發有了更深入的認識與實務經驗。
+                                在協助程式開發的過程中，我學習到如何閱讀與理解程式碼，
+                                如何進行系統測試與除錯，以及如何與團隊成員協同合作完成專題目標。
+                                這些經驗讓我對軟體開發流程有了更完整的認識。
+                                <br><br>
+                                在系統測試階段，我負責測試各種功能，包括人格切換、記憶管理、
+                                對話回應等功能。透過系統性的測試，我發現了許多潛在的問題，
+                                並與組長討論解決方案。這個過程讓我學習到測試的重要性，
+                                一個好的系統不僅要有優秀的功能設計，更需要完善的測試來確保穩定性。
+                                <br><br>
+                                透過本次專題，我不僅提升了程式開發與測試的能力，
+                                也培養了更好的團隊合作與溝通技巧。這些經驗對我未來的學習與工作
+                                都非常有幫助，也讓我對資訊管理領域有了更深入的認識與興趣。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 組員 4 -->
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="member04.jpg" alt="孫堉誠照片" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%23e5e7eb%22 width=%22200%22 height=%22200%22/%3E%3Ctext fill=%22%239ca3af%22 font-family=%22sans-serif%22 font-size=%2218%22 dy=%2210.5%22 font-weight=%22bold%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22%3E孫堉誠照片%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">孫堉誠</h3>
+                        <p class="team-id"><strong>系級：</strong>資訊管理學系</p>
+                        <p class="team-id"><strong>學號：</strong>11144119</p>
+                        <div class="team-intro">
+                            <h4>自我介紹</h4>
+                            <p>
+                                我是資訊管理學系的孫堉誠，在本次專題中參與前端介面開發與使用者體驗設計。
+                                我負責設計與實作系統的使用者介面，包括聊天介面、記憶管理介面等功能。
+                                同時我也協助進行系統測試與功能驗證，確保系統能夠正常運作。
+                                我對前端開發與使用者介面設計有濃厚的興趣，希望透過本次專題
+                                將所學知識應用到實際專案中，並提升自己的實務開發能力。
+                            </p>
+                        </div>
+                        <div class="team-reflection">
+                            <h4>專題參與心得</h4>
+                            <p>
+                                參與本次專題讓我對前端開發與使用者介面設計有了更深入的認識。
+                                在設計聊天介面時，我學習到如何創造流暢的使用者體驗，
+                                如何設計直觀的操作介面，以及如何整合後端 API 來實現功能。
+                                這些經驗讓我對前端開發有了更完整的理解。
+                                <br><br>
+                                在開發記憶管理介面時，我面臨了如何呈現大量記憶資料的挑戰。
+                                透過設計列表、搜尋、編輯等功能，我學習到如何設計有效的資料管理介面。
+                                這個過程讓我認識到，好的介面設計不僅要美觀，更要考慮使用者的實際需求。
+                                <br><br>
+                                與團隊成員協同合作的過程中，我學習到如何與後端開發者溝通，
+                                如何理解系統架構，以及如何在團隊中發揮自己的專長。
+                                透過參與專題開發，我不僅提升了技術能力，也培養了更好的團隊合作與溝通技巧。
+                                <br><br>
+                                這次專題讓我深刻體會到，資訊系統的成功需要前端與後端的密切配合，
+                                需要技術能力與設計思維的結合。這些經驗對我未來的學習與工作都非常有幫助，
+                                也讓我對資訊管理領域有了更深入的認識與興趣。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 具備情緒回饋與記憶紀錄的文字型 NPC 對話模擬系統</p>
+            <div class="footer-links">
+                <a href="index.htm">專題簡介</a> | 
+                <a href="team.htm">組員資料</a> | 
+                <a href="system01.htm">系統展示</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

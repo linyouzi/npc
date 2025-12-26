@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>具備情緒回饋與記憶紀錄的文字型 NPC 對話模擬系統</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">NPC 對話系統</h1>
+            <ul class="nav-links">
+                <li><a href="#overview">專題概述</a></li>
+                <li><a href="#features">核心功能</a></li>
+                <li><a href="#architecture">系統架構</a></li>
+                <li><a href="#applications">應用場景</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主標題區 -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">具備情緒回饋與記憶紀錄的<br>文字型 NPC 對話模擬系統</h1>
+            <p class="hero-subtitle">解決傳統 NPC 與 AI 對話系統的「失憶」與「情感單一」問題</p>
+            <div class="hero-badge">
+                <span>LLM</span>
+                <span>記憶機制</span>
+                <span>情緒回饋</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 專題概述 -->
+    <section id="overview" class="section">
+        <div class="container">
+            <h2 class="section-title">專題概述</h2>
+            <div class="overview-content">
+                <p class="lead-text">
+                    本專題旨在解決傳統 NPC 與現有 AI 對話系統常見的<strong>「失憶」</strong>與<strong>「情感單一」</strong>問題。
+                    系統核心結合大型語言模型（LLM）、階層式記憶轉化機制與人格導向情緒回饋設計，
+                    使 NPC 能夠在多次對話中累積長期記憶，並依據不同人格展現一致且自然的回應風格。
+                </p>
+                <div class="problem-solution">
+                    <div class="problem-box">
+                        <h3>❌ 傳統問題</h3>
+                        <ul>
+                            <li>對話缺乏連續性，無法記住先前內容</li>
+                            <li>回應風格單一，缺乏個性化特質</li>
+                            <li>無法累積長期記憶與關係發展</li>
+                        </ul>
+                    </div>
+                    <div class="solution-box">
+                        <h3>✅ 解決方案</h3>
+                        <ul>
+                            <li>階層式記憶轉化機制，自動保存重要資訊</li>
+                            <li>五種人格模式，提供多樣化對話風格</li>
+                            <li>長期記憶累積，建立持續的互動關係</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心功能 -->
+    <section id="features" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">核心功能</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>階層式記憶轉化</h3>
+                    <p>當特定關鍵資訊在對話中被重複提及達<strong>三次以上</strong>，系統將自動轉化為長期記憶並保存，確保重要資訊不會遺失。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">😊</div>
+                    <h3>五種人格模式</h3>
+                    <p>提供<strong>溫柔、活潑、冷靜、幽默、嚴肅</strong>五種人格，使用者可即時切換，體驗不同風格的對話互動。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>智能對話介面</h3>
+                    <p>提供流暢的聊天介面，整合人格設定、歷史記憶與即時輸入，產生自然且一致的對話回應。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>記憶視覺化管理</h3>
+                    <p>使用者可查看、編輯或刪除 NPC 記憶，完整掌握對話歷史與記憶內容，提供透明的互動體驗。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>高度隱私保護</h3>
+                    <p>採用<strong>AES-256 加密</strong>技術，搭配 JSON 檔案儲存，確保資料安全與隱私保護。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>輕量化部署</h3>
+                    <p>基於 Node.js 與 Express 架構，無需複雜資料庫，適合快速部署與擴展。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 系統架構 -->
+    <section id="architecture" class="section">
+        <div class="container">
+            <h2 class="section-title">系統架構</h2>
+            <div class="architecture-diagram">
+                <div class="arch-layer">
+                    <div class="arch-box frontend">
+                        <h3>前端層</h3>
+                        <ul>
+                            <li>聊天介面</li>
+                            <li>記憶視覺化管理</li>
+                            <li>人格切換控制</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <div class="arch-box backend">
+                        <h3>後端層</h3>
+                        <ul>
+                            <li>Node.js + Express</li>
+                            <li>Prompt 動態組裝器</li>
+                            <li>對話 API 整合</li>
+                            <li>人格設定管理</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="arch-arrow">↓</div>
+                <div class="arch-layer">
+                    <div class="arch-box data">
+                        <h3>資料層</h3>
+                        <ul>
+                            <li>JSON 檔案儲存</li>
+                            <li>AES-256 加密</li>
+                            <li>記憶管理機制</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tech-stack">
+                <h3>技術棧</h3>
+                <div class="tech-tags">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express</span>
+                    <span class="tech-tag">LLM API</span>
+                    <span class="tech-tag">AES-256</span>
+                    <span class="tech-tag">JSON</span>
+                    <span class="tech-tag">HTML/CSS/JS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 應用場景 -->
+    <section id="applications" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">應用場景</h2>
+            <div class="applications-grid">
+                <div class="app-card">
+                    <div class="app-icon">🎮</div>
+                    <h3>遊戲 NPC</h3>
+                    <p>為遊戲角色提供具有記憶與個性的對話系統，增強遊戲沉浸感與互動體驗。</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">📚</div>
+                    <h3>教育訓練</h3>
+                    <p>建立個性化教學助手，記錄學習進度與偏好，提供客製化的學習體驗。</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">🌐</div>
+                    <h3>語言學習</h3>
+                    <p>透過不同人格的對話練習，提升語言學習的趣味性與實用性。</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">🏫</div>
+                    <h3>校園互動</h3>
+                    <p>建立校園虛擬助手，協助學生與教職員進行日常互動與資訊查詢。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 人格展示 -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">五種人格模式</h2>
+            <div class="personalities-grid">
+                <div class="personality-card" data-personality="溫柔">
+                    <div class="personality-header">
+                        <span class="personality-emoji">🌸</span>
+                        <h3>溫柔</h3>
+                    </div>
+                    <p>溫和友善的對話風格，適合需要關懷與支持的場景。</p>
+                </div>
+                <div class="personality-card" data-personality="活潑">
+                    <div class="personality-header">
+                        <span class="personality-emoji">🎉</span>
+                        <h3>活潑</h3>
+                    </div>
+                    <p>充滿活力與熱情的回應，帶來輕鬆愉快的互動體驗。</p>
+                </div>
+                <div class="personality-card" data-personality="冷靜">
+                    <div class="personality-header">
+                        <span class="personality-emoji">🧊</span>
+                        <h3>冷靜</h3>
+                    </div>
+                    <p>理性客觀的分析與建議，適合需要專業意見的場合。</p>
+                </div>
+                <div class="personality-card" data-personality="幽默">
+                    <div class="personality-header">
+                        <span class="personality-emoji">😄</span>
+                        <h3>幽默</h3>
+                    </div>
+                    <p>風趣幽默的對話風格，為互動增添趣味與歡樂。</p>
+                </div>
+                <div class="personality-card" data-personality="嚴肅">
+                    <div class="personality-header">
+                        <span class="personality-emoji">📋</span>
+                        <h3>嚴肅</h3>
+                    </div>
+                    <p>正式專業的溝通方式，適合正式場合與重要議題討論。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 具備情緒回饋與記憶紀錄的文字型 NPC 對話模擬系統</p>
+            <p class="footer-subtitle">結合 LLM、記憶機制與情緒回饋的智能對話系統</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

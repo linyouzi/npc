@@ -1,0 +1,30 @@
+專題網頁部署說明
+================
+
+GitHub 倉庫：https://github.com/linyouzi/npc.git
+
+已完成的步驟：
+1. ✅ 初始化 Git 倉庫
+2. ✅ 創建 .gitignore
+3. ✅ 提交所有檔案（14個檔案）
+4. ✅ 連接遠端倉庫
+5. ✅ 設定分支為 main
+
+待完成：
+- 推送到 GitHub（需要認證）
+
+推送方法：
+1. 使用 GitHub CLI: gh auth login 然後 git push -u origin main
+2. 使用個人存取令牌: 在 GitHub 設定中生成令牌後推送
+3. 手動推送: git push -u origin main（會提示輸入認證資訊）
+
+專案檔案結構：
+- index.htm (專題簡介)
+- team.htm (組員資料)
+- system01.htm, system02.htm, system03.htm (系統展示)
+- styles.css (暗色系主題樣式)
+- script.js (互動腳本)
+- member01.jpg ~ member04.jpg (組員照片)
+- README.md (專題說明)
+
+

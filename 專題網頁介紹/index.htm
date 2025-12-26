@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>專題簡介 - 具備情緒回饋與記憶紀錄的文字型 NPC 對話模擬系統</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">NPC 對話系統</h1>
+            <ul class="nav-links">
+                <li><a href="index.htm">專題簡介</a></li>
+                <li><a href="team.htm">組員資料</a></li>
+                <li><a href="system01.htm">系統展示</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主標題區 -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">具備情緒回饋與記憶紀錄的<br>文字型 NPC 對話模擬系統</h1>
+            <p class="hero-subtitle">解決傳統 NPC 與 AI 對話系統的「失憶」與「情感單一」問題</p>
+        </div>
+    </section>
+
+    <!-- 專題緣起 -->
+    <section id="origin" class="section">
+        <div class="container">
+            <h2 class="section-title">專題緣起</h2>
+            <div class="content-box">
+                <p class="lead-text">
+                    隨著人工智慧技術的快速發展，對話系統已廣泛應用於遊戲、教育、客服等各個領域。
+                    然而，現有的對話系統普遍存在兩個核心問題：
+                </p>
+                <div class="problem-list">
+                    <div class="problem-item">
+                        <h3>❌ 失憶問題</h3>
+                        <p>
+                            傳統的對話系統缺乏有效的記憶機制，無法在多次對話中保持連續性。
+                            使用者每次對話都需要重新說明背景資訊，導致對話體驗不自然且缺乏深度。
+                            這種「失憶」現象嚴重限制了對話系統在需要長期互動場景中的應用。
+                        </p>
+                    </div>
+                    <div class="problem-item">
+                        <h3>❌ 情感單一問題</h3>
+                        <p>
+                            現有的 AI 對話系統大多採用統一的回應風格，缺乏個性化特質。
+                            無論是遊戲 NPC、教學助手或虛擬客服，都無法根據不同情境展現多樣化的對話風格，
+                            使得互動體驗單調乏味，難以建立情感連結。
+                        </p>
+                    </div>
+                </div>
+                <div class="solution-intro">
+                    <p>
+                        為了解決這些問題，本專題提出了一個結合<strong>大型語言模型（LLM）</strong>、
+                        <strong>階層式記憶轉化機制</strong>與<strong>人格導向情緒回饋設計</strong>的創新解決方案。
+                        系統能夠在多次對話中累積長期記憶，並依據不同人格展現一致且自然的回應風格，
+                        為使用者提供更真實、更貼近人性的對話體驗。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 專題特色 -->
+    <section id="features" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">專題特色</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>階層式記憶轉化機制</h3>
+                    <p>
+                        系統採用智能記憶管理機制，當特定關鍵資訊在對話中被重複提及達<strong>三次以上</strong>時，
+                        將自動轉化為長期記憶並保存。這種設計確保重要資訊不會遺失，
+                        同時避免記憶系統過度膨脹，維持系統效能。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">😊</div>
+                    <h3>五種人格模式</h3>
+                    <p>
+                        提供<strong>溫柔、活潑、冷靜、幽默、嚴肅</strong>五種不同的人格模式，
+                        使用者可即時切換，體驗多樣化的對話風格。每種人格都有其獨特的回應特質，
+                        能夠根據情境展現一致且自然的對話行為。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>智能對話介面</h3>
+                    <p>
+                        提供流暢直觀的聊天介面，整合人格設定、歷史記憶與即時輸入。
+                        透過 Prompt 動態組裝器，系統能夠根據當前人格、歷史對話與記憶內容，
+                        產生自然且一致的對話回應。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>記憶視覺化管理</h3>
+                    <p>
+                        使用者可透過視覺化介面查看、編輯或刪除 NPC 記憶，
+                        完整掌握對話歷史與記憶內容。這種透明化的設計讓使用者能夠理解系統的運作機制，
+                        並根據需求調整記憶內容。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>高度隱私保護</h3>
+                    <p>
+                        採用<strong>AES-256 加密</strong>技術，搭配 JSON 檔案儲存，
+                        確保使用者資料的安全與隱私。所有對話記錄與記憶內容都經過加密處理，
+                        提供企業級的資料保護標準。
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>輕量化部署</h3>
+                    <p>
+                        基於 Node.js 與 Express 架構，無需複雜的資料庫系統，
+                        採用 JSON 檔案儲存，適合快速部署與擴展。
+                        系統架構簡潔高效，降低維護成本與技術門檻。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 專題貢獻 -->
+    <section id="contribution" class="section">
+        <div class="container">
+            <h2 class="section-title">專題貢獻</h2>
+            <div class="contribution-grid">
+                <div class="contribution-card academic">
+                    <div class="contribution-header">
+                        <div class="contribution-icon">🎓</div>
+                        <h3>學術界貢獻</h3>
+                    </div>
+                    <div class="contribution-content">
+                        <h4>1. 記憶機制研究</h4>
+                        <p>
+                            本專題提出階層式記憶轉化機制，探討如何有效管理對話系統中的長期記憶。
+                            透過「重複提及三次以上」的轉化規則，為對話系統的記憶管理提供了一個實用的解決方案。
+                            此機制可作為後續研究的基礎，進一步優化記憶轉化的判斷標準與效率。
+                        </p>
+                        <h4>2. 人格導向對話系統</h4>
+                        <p>
+                            系統整合五種不同人格模式，展現如何透過 Prompt 工程實現個性化對話。
+                            這為對話系統的個性化研究提供了實作範例，證明透過適當的提示詞設計，
+                            可以在單一模型中實現多種對話風格的切換。
+                        </p>
+                        <h4>3. 輕量化架構設計</h4>
+                        <p>
+                            採用 JSON 檔案儲存與 AES-256 加密的輕量化架構，
+                            為中小型應用場景提供了不需要複雜資料庫系統的解決方案。
+                            此架構設計可作為相關研究的參考，特別是在資源受限的環境中。
+                        </p>
+                    </div>
+                </div>
+                <div class="contribution-card practical">
+                    <div class="contribution-header">
+                        <div class="contribution-icon">💼</div>
+                        <h3>實務界貢獻</h3>
+                    </div>
+                    <div class="contribution-content">
+                        <h4>1. 遊戲產業應用</h4>
+                        <p>
+                            系統可直接應用於遊戲 NPC 設計，為遊戲角色提供具有記憶與個性的對話系統。
+                            遊戲開發者可以透過本系統快速建立具有深度互動的 NPC，
+                            增強遊戲的沉浸感與玩家體驗，降低開發成本。
+                        </p>
+                        <h4>2. 教育訓練領域</h4>
+                        <p>
+                            在教育訓練場景中，系統可作為個性化教學助手，
+                            記錄學習者的進度與偏好，提供客製化的學習體驗。
+                            不同的人格模式可適應不同的學習風格，提升學習效果與參與度。
+                        </p>
+                        <h4>3. 語言學習工具</h4>
+                        <p>
+                            透過不同人格的對話練習，語言學習者可以在多樣化的情境中練習對話，
+                            提升語言學習的趣味性與實用性。系統的記憶功能能夠追蹤學習進度，
+                            提供個人化的學習建議。
+                        </p>
+                        <h4>4. 校園互動應用</h4>
+                        <p>
+                            系統可建立校園虛擬助手，協助學生與教職員進行日常互動與資訊查詢。
+                            透過記憶機制，助手能夠記住使用者的偏好與需求，
+                            提供更貼心的服務體驗。
+                        </p>
+                        <h4>5. 開源貢獻</h4>
+                        <p>
+                            系統採用輕量化架構與開源技術，易於部署與擴展。
+                            可作為開源專案提供給社群使用，促進相關技術的發展與應用。
+                            同時，系統的模組化設計便於其他開發者進行二次開發與客製化。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 具備情緒回饋與記憶紀錄的文字型 NPC 對話模擬系統</p>
+            <div class="footer-links">
+                <a href="index.htm">專題簡介</a> | 
+                <a href="team.htm">組員資料</a> | 
+                <a href="system01.htm">系統展示</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
